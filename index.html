@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Tarea</title>
+  <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <script src="jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: transparent !important;
+      position: fixed;
+      width: 100%;
+      z-index: 1001;
+    }
+
+    .banner {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60vh;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    .banner-content {
+      position: absolute;
+      top: 80px;
+      left: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 5px;
+      max-width: 40%;
+    }
+
+    .row-scroll {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 1rem;
+    }
+
+    .row-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .miniatura {
+      display: inline-block;
+      width: 180px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .miniatura img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .icono-navbar {
+      height: 24px;
+      width: 24px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark px-3"
+    style="background-color: transparent; position: fixed; top: 0; width: 100%; z-index: 1001;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="img/Netflix.svg" height="30" alt="Netflix">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">My List</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <img src="img/lupa.png" alt="Buscar" class="icono-navbar">
+          <img src="img/campana.png" alt="Notificaciones" class="icono-navbar">
+          <img src="img/avatar.png" alt="Perfil" class="icono-navbar rounded-circle">
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div id="banner" class="banner" style="background-image: url('img/1992');">
+    <div class="banner-content">
+      <h1 id="titulo-principal">1992</h1>
+      <p id="descripcion-principal">Del director Snoop Dogg, un padre (Tyrese Gibson) se involucra en un atraco de alto
+        riesgo en una carrera vibrante contra el tiempo, mientras lucha por rescatar a su hijo de una despiadada familia
+        de criminales (Scott Eastwood y Ray Liotta). A medida que aumentan las tensiones durante los disturbios en Los
+        Ángeles de 1992 y aumenta el caos, las dos familias se cruzan. Dirigida por Ariel Vromen.</p>
+      <p id="duracion-principal">Duración: 120 min</p>
+      <button class="btn btn-light btn-sm">Play</button>
+      <button class="btn btn-secondary btn-sm">More Info</button>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-5">
+    <h5 class="ms-3">Suspenso</h5>
+    <div class="row-scroll">
+      <div class="miniatura" data-titulo="Audi versus Lancia Carrera por la Gloria"
+        data-descripcion="Una verdadera historia de David contra Goliat que pone de relieve la intensa rivalidad entre Audi y Lancia en el Campeonato del Mundo de Rallyes de 1983. Contra todo pronóstico, Lancia lucha por recuperar su antigua gloria con una combinación de innovación y coraje."
+        data-img="img/audi_lancia.png" data-duracion="110 min">
+        <img src="img/audi_lancia.png" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="28 Dias"
+        data-descripcion="Jim (Cillian Murphy) descubre que se desató un virus letal. ¿Ha afectado a todo el mundo?"
+        data-img="img/28Dias" data-duracion="102 min">
+        <img src="img/28Dias" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="1992" data-descripcion="Del director Snoop Dogg, un padre (Tyrese Gibson) se involucra en un atraco de alto
+        riesgo en una carrera vibrante contra el tiempo, mientras lucha por rescatar a su hijo de una despiadada familia
+        de criminales (Scott Eastwood y Ray Liotta). A medida que aumentan las tensiones durante los disturbios en Los
+        Ángeles de 1992 y aumenta el caos, las dos familias se cruzan. Dirigida por Ariel Vromen." data-img="img/1992"
+        data-duracion="120 min">
+        <img src="img/1992" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Asesino Ninja"
+        data-descripcion="Raizo fue entrenado desde pequeño al modo del Clan Ninja Ozunu y ahora es perseguido por sus compañeros guerreros por querer liberarse de ellos y de su armado patriarca."
+        data-img="img/AsesinoNinja" data-duracion="130 min">
+        <img src="img/AsesinoNinja" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Codigos de Guerra"
+        data-descripcion="Historias de guerra sobre familia, ética y honor que incluyen la verdadera historia de dos marines de los EE. UU. que deben mantener su posición para detener un camión bomba suicida, un médico de la Marina que intenta aferrarse a su humanidad, y un soldado de la Segunda Guerra Mundial que se separa de su escuadrón y se ve obligado a reevaluar su código."
+        data-img="img/CodigosDeGuerra" data-duracion="115 min">
+        <img src="img/CodigosDeGuerra" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Como entrenar a tu dragon 3"
+        data-descripcion="La repentina aparición de una Furia Luminosa coincide con la amenaza más oscura que la aldea haya enfrentado, con esto, todos deberán viajar a un mundo oculto que se creía un mito. En este último capítulo, Hipo y Chimuelo finalmente descubrirán sus verdaderos destinos. Así, jinete y dragón lucharán juntos para proteger todo lo que han convertido en un tesoro."
+        data-img="img/dragon3" data-duracion="110 min">
+        <img src="img/dragon3" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="El Fundador"
+        data-descripcion="Ray Kroc, vendedor de máquinas de batidos, llega a una hamburguesería en California e, impresionado por su sistema de 'comida rápida', se asocia con los hermanos McDonald para expandir la franquicia, llevándose todo el crédito y los beneficios."
+        data-img="img/ElFundador" data-duracion="115 min">
+        <img src="img/ElFundador" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="El Jugador"
+        data-descripcion="Jim Bennett (Mark Wahlberg) es un profesor con una doble vida, adicto a las apuestas de mucho dinero. Al tomar dinero prestado de unos gánsteres muy peligrosos, pone en peligro la vida de sus seres queridos y debe jugarse a todo o nada."
+        data-img="img/ElJugador" data-duracion="110 min">
+        <img src="img/ElJugador" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Fuga"
+        data-descripcion="Ubicado en la penitenciaría de máxima seguridad más peligrosa del mundo, hogar de los criminales más traicioneros, las tensiones entre los reclusos y el personal aumentan, lo que lleva a la anarquía que envuelve la prisión y el orden se trastorna."
+        data-img="img/Fuga" data-duracion="112 min">
+        <img src="img/Fuga" alt="pelicula">
+      </div>
+    </div>
+
+    <h5 class="ms-3">Acción</h5>
+    <div class="row-scroll">
+      <div class="miniatura" data-titulo="El Gato con Botas El Ultimo Deseo"
+        data-descripcion="¡Tu felino favorito está de vuelta! El Gato con Botas descubre que su pasión por la aventura le ha costado ocho de sus nueve vidas. Así que debe partir en busca de la mítica Estrella de los Deseos para restaurar sus vidas perdidas."
+        data-img="img/GatoConBotas" data-duracion="120 min">
+        <img src="img/GatoConBotas" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Gladiador 2"
+        data-descripcion="Años después de la muerte de Maximus, Lucius debe ir al Coliseo luego de que su hogar fuera conquistado por dos emperadores tiranos. Con el futuro del imperio en juego, debe encontrar la fuerza y el honor para devolver la gloria de Roma al pueblo."
+        data-img="img/Gladiador2" data-duracion="110 min">
+        <img src="img/Gladiador2" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Gran Turismo"
+        data-descripcion="Gran Turismo: De Jugador A Corredor está basada en la historia increíblemente verdadera de un equipo de ganadores improbables: un gamer perseverante de la clase trabajadora (Archie Madekwe), un fracasado expiloto de carreras (David Harbour), y un ejecutivo de automovilismo idealista (Orlando Bloom). Juntos lo arriesgarán todo para ser parte del deporte más elitista del mundo."
+        data-img="img/GranTurismo" data-duracion="100 min">
+        <img src="img/GranTurismo" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="HitMan Complices del Engaño"
+        data-descripcion="Gary, un profesor de filosofía, descubre su talento trabajando como falso asesino a sueldo para la policía. Pero todo cambia cuando conoce a Madison, una hermosa joven que pondrá en juego tanto la operación, como el corazón y la identidad de Gary."
+        data-img="img/HitMan" data-duracion="100 min">
+        <img src="img/HitMan" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Infinite"
+        data-descripcion="Un hombre descubre que sus alucinaciones son en realidad visiones de vidas pasadas."
+        data-img="img/Infinite" data-duracion="100 min">
+        <img src="img/Infinite" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Invencible"
+        data-descripcion="INVINCIBLE es una serie animada para adultos que trata sobre Mark Grayson, un chico de 17 años común como cualquier otro, excepto que su padre es el superhéroe más poderoso del mundo, Omni-Man. Pero cuando Mark comienza a desarrollar sus poderes, descubre que el legado de su padre podría no ser tan heroico como imaginaba."
+        data-img="img/Invencible" data-duracion="100 min">
+        <img src="img/Invencible" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Jack Reacher"
+        data-descripcion="En este thriller, el investigador Jack Reacher salta de las páginas de la novela de Lee Child a la pantalla grande. Toda la evidencia de un horrible crimen apunta al sospechoso en custodia que entrega una nota que dice"
+        data-img="img/JackReacher" data-duracion="100 min">
+        <img src="img/JackReacher" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Kraven El Cazador"
+        data-descripcion="Kraven el Cazador cuenta la intensa y emocionante historia de origen de uno de los villanos más icónicos de Marvel. Aaron Taylor-Johnson interpreta a Kraven, un hombre marcado por su complicada relación con su despiadado padre, que lo empuja a un camino de venganza con consecuencias brutales y lo convierte en el mejor cazador del mundo, pero también uno de los más temidos."
+        data-img="img/Kraven" data-duracion="100 min">
+        <img src="img/Kraven" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="La Estafa Maestra"
+        data-descripcion="Charlie Croker y su banda de ladrones están a punto de dar un golpe perfecto y definitivo: apoderarse de un camión lleno de oro, amañando los semáforos de Los Ángeles para crear un gigantesco atasco que les facilitaría la huida."
+        data-img="img/LaEstafaMaestra" data-duracion="100 min">
+        <img src="img/LaEstafaMaestra" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Matar o Morir"
+        data-descripcion="Tras el asesinato de su familia, Riley una joven madre se encuentra sin nada que perder. Después de varios años de entrenamiento, Riley decide tomar venganza el día del aniversario luctuoso de su familia contra quienes le arrebataron lo que más amaba, su venganza desatará una imparable cacería en la que su única opción será matar o morir."
+        data-img="img/MatarMorir" data-duracion="100 min">
+        <img src="img/MatarMorir" alt="pelicula">
+      </div>
+    </div>
+
+    <h5 class="ms-3">Ciencia Ficción</h5>
+    <div class="row-scroll">
+      <div class="miniatura" data-titulo="Mision Imposible 2"
+        data-descripcion="Ethan Hunt tiene una nueva misión: evitar que el exagente y terrorista Sean Ambrose suelte un virus mortal en Australia. Para conseguirlo, debe reclutar a la antigua amante de Ambrose, la ladrona profesional Nhye (Thandiwe Newton)."
+        data-img="img/mision_imposible_2.webp" data-duracion="128 min">
+        <img src="img/mision_imposible_2.webp" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="El Mundo Textil"
+        data-descripcion="Una historia que te contará de donde viene la ropa que simpre usamos y que hay detrás de todo ello"
+        data-img="img/movie.jpg" data-duracion="115 min">
+        <img src="img/movie.jpg" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Nadie"
+        data-descripcion="A veces el hombre que no notas es el más peligroso de todos. El ganador del Emmy Bob Odenkirk (Better Call Saul, The Post: Los oscuros secretos del Pentágono, Nebraska) interpreta a Hutch Mansell, un padre de familia y esposo subestimado y pasado por alto, que se toma las humillaciones de la vida sin defenderse y con resignación."
+        data-img="img/Nadie" data-duracion="100 min">
+        <img src="img/Nadie" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Napoleon"
+        data-descripcion="Joaquin Phoenix protagoniza un enfoque personal a los orígenes del líder militar francés y a su ascenso rápido y despiadado a emperador."
+        data-img="img/Napoleon" data-duracion="100 min">
+        <img src="img/Napoleon" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Novocaine Sin Dolor"
+        data-descripcion="Nathan Caine (Jack Quaid) nació con un raro trastorno genético que le impide sentir dolor. Cuando la chica de sus sueños (Amber Midthunder) es secuestrada durante un robo en un banco, él aprovecha su incapacidad para sentir dolor físico como una ventaja inesperada para salvarla."
+        data-img="img/Novocaine" data-duracion="100 min">
+        <img src="img/Novocaine" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="1942 La Gran Ofensiva"
+        data-descripcion="Película bélica basada en hechos reales sobre una de las batallas más importantes, sangrientas y épicas de la Segunda Guerra Mundial. En 1942, el ejército ruso despliega toda su artillería en la ciudad de Rzhev, para romper con el devastador asedio Nazi."
+        data-img="img/Ofensiva" data-duracion="100 min">
+        <img src="img/Ofensiva" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="El Origen"
+        data-descripcion="Dom Cobb es un ladrón que roba secretos valiosos de lo más profundo del subconsciente durante el sueño. Ahora a Cobb le ofrecen una oportunidad de redención."
+        data-img="img/Origen" data-duracion="100 min">
+        <img src="img/Origen" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Una Pareja Explosiva"
+        data-descripcion="Cuando Chan, el alumno favorito de Hong Kong quien es detective de la policía se entera que el inspector Lee es secuestrado en Estados Unidos, viaja a Estados Unidos para encontrarla."
+        data-img="img/ParejaExplosiva" data-duracion="100 min">
+        <img src="img/ParejaExplosiva" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Que Pasó Ayer"
+        data-descripcion="Planearon una despedida de soltero a Las Vegas que jamás podrán olvidar. ¡Pero ahora, necesitan realmente recordar qué es lo que sucedió!"
+        data-img="img/QuePasoAyer1" data-duracion="100 min">
+        <img src="img/QuePasoAyer1" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Rescate Implacable"
+        data-descripcion="Levon Cade dejó atrás una condecorada carrera militar como agente encubierto para vivir una vida tranquila trabajando en la construcción. Pero cuando una red de trata de personas se lleva a la hija de su jefe, que es como su familia, su búsqueda para traerla de vuelta a casa revela un mundo de corrupción mucho más grande de lo que podría haber imaginado."
+        data-img="img/RescateImplacable" data-duracion="100 min">
+        <img src="img/RescateImplacable" alt="pelicula">
+      </div>
+
+      <div class="miniatura" data-titulo="Riesgo Absoluto"
+        data-descripcion="Un hombre encuentra a una niña secuestrada en un camión. Para salvarla, enfrenta a unos criminales."
+        data-img="img/RiesgoAbsoluto" data-duracion="100 min">
+        <img src="img/RiesgoAbsoluto" alt="pelicula">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('.miniatura').click(function () {
+        const titulo = $(this).attr('data-titulo');
+        const descripcion = $(this).attr('data-descripcion');
+        const imagen = $(this).attr('data-img');
+        const duracion = $(this).attr('data-duracion');
+
+        $('#titulo-principal').text(titulo);
+        $('#descripcion-principal').text(descripcion);
+        $('#duracion-principal').text('Duración: ' + duracion);
+        $('#banner').css('background-image', `url('${imagen}')`);
+      });
+    });
+  </script>
+</body>
+
+</html>
